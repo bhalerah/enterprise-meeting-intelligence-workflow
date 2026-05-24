@@ -1,0 +1,1 @@
+The team discussed the upcoming release timeline. QA identified gaps in deployment testing coverage. Engineering is still working on rollback automation scripts. Leadership requested weekly status reporting. Product management raised concerns about production approval delays if testing is not completed by Friday.
