@@ -1,3 +1,4 @@
+const { retrieveRelevantContext } = require("./rag/retriever");
 require("dotenv").config();
 const fs = require("fs");
 const OpenAI = require("openai");
@@ -105,11 +106,22 @@ async function run() {
 );
 validateMeetingAnalysis(meetingAnalysis);
 console.log("\nStage 1 validation passed.");
+const retrievedContext = retrieveRelevantContext(JSON.stringify(meetingAnalysis));
+
+console.log("\n--- Retrieved Knowledge Context ---\n");
+console.log(retrievedContext);
+fs.writeFileSync(
+  "./outputs/retrieved-context.txt",
+  retrievedContext
+);
   console.log("\n--- Stage 2: Release Recommendation ---\n");
 
   const releaseRecommendation = await callOpenAI(
     releaseRecommendationPrompt,
-    JSON.stringify(meetingAnalysis)
+    JSON.stringify({
+  meetingAnalysis,
+  retrievedContext,
+})
   );
 
   console.log(JSON.stringify(releaseRecommendation, null, 2));

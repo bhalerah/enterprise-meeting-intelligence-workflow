@@ -1,0 +1,5 @@
+Source: release-policy.txt
+Release approval requires completion of deployment testing, documented rollback plan, QA signoff, and leadership visibility for high-risk releases. If testing coverage is incomplete, the release may proceed only with conditional approval and documented mitigation steps.
+
+Source: rollback-guidelines.txt
+Rollback readiness requires either automated rollback scripts or a clearly documented manual rollback procedure. Releases with incomplete rollback automation should include contingency planning, stakeholder communication, and post-deployment monitoring.

@@ -1,0 +1,1 @@
+Rollback readiness requires either automated rollback scripts or a clearly documented manual rollback procedure. Releases with incomplete rollback automation should include contingency planning, stakeholder communication, and post-deployment monitoring.

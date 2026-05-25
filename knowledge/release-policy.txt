@@ -1,0 +1,1 @@
+Release approval requires completion of deployment testing, documented rollback plan, QA signoff, and leadership visibility for high-risk releases. If testing coverage is incomplete, the release may proceed only with conditional approval and documented mitigation steps.
