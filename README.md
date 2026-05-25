@@ -19,6 +19,12 @@ The project demonstrates enterprise AI workflow concepts including:
 # Workflow Architecture
 
 ```text
+Knowledge Documents
+    ↓
+Retrieval Layer
+    ↓
+Relevant Context Injection
+
 Transcript File
     ↓
 Stage 1: Meeting Analysis
@@ -70,6 +76,37 @@ This improves workflow reliability and enterprise readiness.
 
 ---
 
+# Retrieval-Augmented Generation (RAG)
+
+The workflow includes a basic Retrieval-Augmented Generation (RAG) layer.
+
+Enterprise knowledge documents such as:
+- release policies
+- rollback procedures
+- operational governance guidance
+
+are retrieved dynamically and injected into the AI recommendation workflow.
+
+This improves:
+- grounding
+- policy awareness
+- recommendation quality
+- operational traceability
+
+Current implementation uses:
+- keyword-based retrieval
+- local knowledge files
+- context injection into Stage 2 recommendation generation
+
+Future enhancements include:
+- semantic embeddings
+- vector databases
+- document chunking
+- similarity search
+- citation tracking
+
+---
+
 # Tech Stack
 
 - Node.js
@@ -77,7 +114,8 @@ This improves workflow reliability and enterprise readiness.
 - JavaScript
 - File-based workflow persistence
 - Structured JSON orchestration
-
+- Retrieval-Augmented Generation (RAG)
+- Knowledge retrieval layer
 ---
 
 # Project Structure
@@ -87,18 +125,23 @@ meeting-summarizer/
  ├── app.js
  ├── data/
  │    └── transcript.txt
+ ├── knowledge/
+ │    ├── release-policy.txt
+ │    └── rollback-guidelines.txt
  ├── prompts/
  │    ├── meeting-summary-system.txt
  │    └── release-recommendation-system.txt
+ ├── rag/
+ │    └── retriever.js
  ├── outputs/
  │    ├── meeting-analysis.json
- │    └── release-recommendation.json
+ │    ├── release-recommendation.json
+ │    └── retrieved-context.txt
  ├── .env
  ├── .gitignore
  ├── package.json
  └── README.md
 ```
-
 ---
 
 # How To Run
@@ -140,7 +183,10 @@ node app.js
 - Slack / Teams notifications
 - AI evaluation metrics
 - MCP integration
-
+- OpenAI embeddings
+- ChromaDB / Pinecone integration
+- Semantic similarity search
+- Advanced RAG pipelines
 ---
 
 # Learning Outcomes
